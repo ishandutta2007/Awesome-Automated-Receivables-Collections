@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+      <circle cx="40" cy="40" r="1" fill="#475569" fill-opacity="0.4" />
+    </pattern>
+
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.08); }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes floatOpposite {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(8px); }
+      }
+      @keyframes dashAnim {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes orbMove {
+        0% { cx: 200px; cy: 100px; }
+        50% { cx: 240px; cy: 140px; }
+        100% { cx: 200px; cy: 100px; }
+      }
+      .bg-orb1 {
+        animation: pulseGlow 8s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .bg-orb2 {
+        animation: pulseGlow 10s ease-in-out infinite 2s;
+        transform-origin: center;
+      }
+      .flow-path {
+        stroke-dasharray: 8, 8;
+        animation: dashAnim 15s linear infinite;
+      }
+      .pill-float1 {
+        animation: floatSlow 6s ease-in-out infinite;
+      }
+      .pill-float2 {
+        animation: floatOpposite 7s ease-in-out infinite 1s;
+      }
+      .pill-float3 {
+        animation: floatSlow 6.5s ease-in-out infinite 0.5s;
+      }
+      .pill-float4 {
+        animation: floatOpposite 8s ease-in-out infinite 1.5s;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Glowing Spheres in Background (Layer 1) -->
+  <circle class="bg-orb1" cx="220" cy="110" r="180" fill="url(#glowGrad1)" />
+  <circle class="bg-orb2" cx="980" cy="300" r="220" fill="url(#glowGrad2)" />
+  <circle cx="600" cy="210" r="140" fill="#38bdf8" fill-opacity="0.04" />
+
+  <!-- Geometric Grid Layer (Layer 2) -->
+  <rect width="1200" height="420" rx="16" fill="url(#grid)" />
+
+  <!-- Dynamic Circuit / Cashflow Animation Lines (Layer 3 - strictly background/periphery) -->
+  <g opacity="0.45">
+    <path class="flow-path" d="M 50 80 Q 300 20 600 80 T 1150 80" fill="none" stroke="url(#lineGrad)" stroke-width="2" />
+    <path class="flow-path" d="M 50 350 Q 350 400 700 350 T 1150 350" fill="none" stroke="url(#lineGrad)" stroke-width="2" />
+    <!-- Connector Nodes -->
+    <circle cx="300" cy="50" r="4" fill="#38bdf8" />
+    <circle cx="900" cy="50" r="4" fill="#818cf8" />
+    <circle cx="350" cy="375" r="4" fill="#818cf8" />
+    <circle cx="850" cy="375" r="4" fill="#38bdf8" />
+  </g>
+
+  <!-- Floating Feature Badges (Periphery Top & Bottom - Leaves Center Clean) -->
+  <g class="pill-float1">
+    <rect x="90" y="45" width="210" height="34" rx="17" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1.2" />
+    <text x="195" y="67" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#38bdf8" text-anchor="middle">⚡ AI Dunning Workflows</text>
+  </g>
+
+  <g class="pill-float2">
+    <rect x="900" y="45" width="210" height="34" rx="17" fill="#1e293b" fill-opacity="0.85" stroke="#818cf8" stroke-opacity="0.5" stroke-width="1.2" />
+    <text x="1005" y="67" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#a5b4fc" text-anchor="middle">📈 Real-Time DSO Reduction</text>
+  </g>
+
+  <g class="pill-float3">
+    <rect x="120" y="340" width="220" height="34" rx="17" fill="#1e293b" fill-opacity="0.85" stroke="#a855f7" stroke-opacity="0.5" stroke-width="1.2" />
+    <text x="230" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#d8b4fe" text-anchor="middle">💳 Autonomous Cash Recovery</text>
+  </g>
+
+  <g class="pill-float4">
+    <rect x="860" y="340" width="240" height="34" rx="17" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1.2" />
+    <text x="980" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#7dd3fc" text-anchor="middle">🛡️ Automated B2B Collections</text>
+  </g>
+
+  <!-- FOREGROUND TEXT (High Contrast, Unobstructed Center) -->
+  <g id="foreground-content">
+    <!-- Icon / Monogram Shield -->
+    <g transform="translate(565, 105)">
+      <rect x="0" y="0" width="70" height="70" rx="20" fill="#1e293b" stroke="url(#titleGrad)" stroke-width="2" />
+      <path d="M 23 25 L 47 25 L 35 45 Z" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round" />
+      <circle cx="35" cy="46" r="3" fill="#818cf8" />
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="222" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.5" fill="url(#titleGrad)" text-anchor="middle">
+      Automated Receivables &amp; Collections
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="600" y="260" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#94a3b8" letter-spacing="0.3" text-anchor="middle">
+      Curated Guide to Enterprise Order-to-Cash, Smart Dunning, Cash Application &amp; Autonomous Debt Recovery
+    </text>
+
+    <!-- Stat Bar -->
+    <text x="600" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="500" fill="#64748b" text-anchor="middle">
+      Enterprise SaaS &bull; Transparent Starting Pricing &bull; Open-Source Engines &bull; Market Analytics
+    </text>
+  </g>
+
+  <!-- Subtle Border Frame -->
+  <rect x="1" y="1" width="1198" height="418" rx="15" fill="none" stroke="#334155" stroke-opacity="0.4" stroke-width="1.5" />
+</svg>
