@@ -148,7 +148,7 @@
 
     <!-- Stat Bar -->
     <text x="600" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="500" fill="#64748b" text-anchor="middle">
-      Enterprise SaaS &bull; Transparent Starting Pricing &bull; Open-Source Engines &bull; Market Analytics
+      Enterprise SaaS &#x2022; Transparent Starting Pricing &#x2022; Open-Source Engines &#x2022; Market Analytics
     </text>
   </g>
 
